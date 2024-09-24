@@ -1,0 +1,16 @@
+FROM frolvlad/alpine-glibc:alpine-3.17
+RUN apk add bash
+SHELL ["/bin/bash", "-c"]
+RUN echo https://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
+RUN apk update
+
+RUN apk add --no-cache openjdk8=8.402.06-r0 zip wget curl
+
+ENV PATH="$PATH:/bin/bash"
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk/
+
+RUN wget https://github.com/jattach/jattach/releases/download/v2.2/jattach
+RUN chmod +x jattach
+
+WORKDIR /app
+COPY spring-petclinic-1.5.1.jar /app/spring-petclinic.jar
