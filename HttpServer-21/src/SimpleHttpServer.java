@@ -36,7 +36,7 @@ public class SimpleHttpServer {
         System.out.println("Request: " + requestLine);
 
         // Read and ignore the rest of the request headers
-        while (in.readLine().length() != 0) {}
+        while (!in.readLine().isEmpty()) {}
 
         // Prepare the response
         String httpResponse = "HTTP/1.1 200 OK\r\n" +
