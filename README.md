@@ -32,6 +32,12 @@ This project will showcase the increased memory usage in **Java 21** compared to
 
 ![Docker Stats](./Docker%20Stats.png "Docker Stats")
 
+## Simple HTTP Server Test
+
+Tested the same scenario with a Simple HTTP Server written in Java without any dependency. Memory usage is still slightly higher in Java 21. The source code for the HTTP Server is available in the HttpServer-21 directory and the docker files are available in the DockerFiles/SimpleHttpServer.
+
+![Simple Http Server Docker Stats](./Simple%20Http%20Server%20Stats.png "Simple Http Server Docker Stats")
+
 ## Native Memory Tracking Output
 
 ### Java 8
